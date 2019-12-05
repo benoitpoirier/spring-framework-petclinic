@@ -15,7 +15,7 @@ pipeline {
         stage('Test') { 
             steps {
 				withSonarQubeEnv('SonarScanner') {			
-                sh 'mvn -B -e -DskipTests -DproxySet=true -DproxyHost=marc.proxy.corp.sopra -DproxyPort=8080 -Dhttp.nonProxyHosts=localhost verify sonar:sonar' 
+                sh 'mvn -B -e -DskipTests -DproxySet=false verify sonar:sonar' 
 				}
             }
         }		
